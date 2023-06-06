@@ -13,16 +13,33 @@
    <h:outputLabel value="Grades: #{studentRegisterBean.student.grade1}, #{studentRegisterBean.student.grade2}, #{studentRegisterBean.student.grade2}"/><br/>
    <h:outputLabel value="Average: #{(studentRegisterBean.student.grade1 + studentRegisterBean.student.grade2 + studentRegisterBean.student.grade2)/3}"/><br/>
    <h:outputLabel value="Shift: #{studentRegisterBean.student.shift}"/><br/>
+   <!--
+   Reserved words: and, or, not, eq, ne, lt, gt, le, ge, true, false
+   null, instanceof, empty, div e mod
+   -->
    <h:outputLabel value="Operations: #{studentRegisterBean.student.grade1} &le; #{studentRegisterBean.student.grade2} = #{studentRegisterBean.student.grade1 eq studentRegisterBean.student.grade2}"/><br/>
    <h:outputLabel value="#{studentRegisterBean.student.grade2 gt 6 ? 'APROVED' : 'REPROVED'}"/><br/>
    <h:outputLabel value="${studentRegisterBean.student.name += studentRegisterBean.student.lastName}"/><br/>
    <h:outputLabel value="#{studentRegisterBean.student.name.equals(studentRegisterBean.student.name.concat(studentRegisterBean.student.lastName))}"/><br/>
+   <!-- enum primefaces-->
    <h:outputLabel value="Shift: #{studentRegisterBean.student.shift} == #{Shift.AFTERNOON}: #{studentRegisterBean.student.shift eq Shift.AFTERNOON}"/><br/>
-<!--
-   Reserved words: and, or, not, eq, ne, lt, gt, le, ge, true, false
-   null, instanceof, empty, div e mod
-   -->
-
-
+<!--   ui: repeat -->
+   <ui:repeat value="#{studentRegisterBean.greetingsArray}" var="greeting">
+      <h:outputLabel value="#{greeting}"/>
+   </ui:repeat>
+   <br/>
+   <ui:repeat value="#{studentRegisterBean.greetingsList}" var="greeting">
+      <h:outputLabel value="#{greeting}"/>
+   </ui:repeat>
+   <br/>
+   <ui:repeat value="#{studentRegisterBean.greetingsSet}" var="greeting">
+      <h:outputLabel value="#{greeting}"/><br/>
+   </ui:repeat>
+   <br/>
+   <h:outputLabel value="#{studentRegisterBean.greetingsMap.get('greeting')}"/><br/>
+   <ui:repeat value="#{studentRegisterBean.greetingsMap.entrySet()}" var="greeting">
+      <h:outputLabel value="#{greeting.key}"/>
+      <h:outputLabel value="#{greeting.value}"/><br/>
+   </ui:repeat>
 </h:body>
 </html>
