@@ -7,6 +7,18 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
    <h:outputLabel value="Hello, world"/><br/>
-   <h:outputLabel value="#{studentRegisterBean.name}"/><br/>
+   <h:outputLabel value="#{studentRegisterBean.name} #{studentRegisterBean.lastName}"/><br/>
+   <h:outputLabel value="Grades: #{studentRegisterBean.grade1}, #{studentRegisterBean.grade2}, #{studentRegisterBean.grade2}"/><br/>
+   <h:outputLabel value="Average: #{(studentRegisterBean.grade1 + studentRegisterBean.grade2 + studentRegisterBean.grade2)/3}"/><br/>
+   <h:outputLabel value="Operations: #{studentRegisterBean.grade1} &le; #{studentRegisterBean.grade2} = #{studentRegisterBean.grade1 eq studentRegisterBean.grade2}"/><br/>
+   <h:outputLabel value="#{studentRegisterBean.grade2 gt 6 ? 'APROVED' : 'REPROVED'}"/><br/>
+   <h:outputLabel value="${studentRegisterBean.name += studentRegisterBean.lastName}"/><br/>
+   <h:outputLabel value="#{studentRegisterBean.name.equals(studentRegisterBean.name.concat(studentRegisterBean.lastName))}"/><br/>
+<!--
+   Reserved words: and, or, not, eq, ne, lt, gt, le, ge, true, false
+   null, instanceof, empty, div e mod
+   -->
+
+
 </f:view>
 </html>
