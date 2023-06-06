@@ -1,11 +1,10 @@
+package br.com.duarte.jsf.models;
+
+import br.com.duarte.jsf.models.enums.Shift;
 import lombok.Data;
 
-import javax.inject.Named;
-import java.io.Serializable;
-
-@Named
 @Data
-public class StudentRegisterBean implements Serializable {
+public class Student {
 
     private static final long serialVersionUID = -8802273915842976081L;
 
@@ -14,6 +13,5 @@ public class StudentRegisterBean implements Serializable {
     private Double grade1 = 10D;
     private Double grade2 = 8.5D;
     private Double grade3 = 9D;
-
-
+    private Shift shift = Shift.AFTERNOON;
 }
