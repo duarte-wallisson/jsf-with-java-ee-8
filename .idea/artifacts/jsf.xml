@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="jsf">
+    <output-path>$PROJECT_DIR$/out/artifacts/jsf.war</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jsf-with-java-ee-8" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.faces:javax.faces-api:2.3" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="jsf-with-java-ee-8/web/Web" />
+    </root>
+  </artifact>
+</component>
