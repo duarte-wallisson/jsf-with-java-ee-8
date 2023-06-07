@@ -31,6 +31,7 @@
     <!-- enum primefaces-->
     <h:outputLabel
             value="Shift: #{studentRegisterBean.student.shift} == #{Shift.AFTERNOON}: #{studentRegisterBean.student.shift eq Shift.AFTERNOON}"/><br/>
+
     <!--   ui: repeat -->
     <h:outputLabel value="#{studentRegisterBean.separator('COLLECTIONS')}"/><br/>
     <ui:repeat value="#{studentRegisterBean.greetingsArray}" var="greeting">
@@ -45,6 +46,7 @@
         <h:outputLabel value="#{greeting}"/><br/>
     </ui:repeat>
     <br/>
+
     <h:outputLabel value="#{studentRegisterBean.greetingsMap.get('greeting')}"/><br/>
     <ui:repeat value="#{studentRegisterBean.greetingsMap.entrySet()}" var="greeting">
         <h:outputLabel value="#{greeting.key}"/>
@@ -54,5 +56,19 @@
     <h:form>
         <h:commandButton value="Next page" action="#{studentRegisterBean.goToIndex2()}"/>
     </h:form>
+
+    <br/>
+    <h:outputLabel value="#{studentRegisterBean.greetingsMap.get('CSS and JS')}"/><br/>
+    <ui:repeat value="#{studentRegisterBean.greetingsList}" var="greeting" varStatus="status">
+        <h:outputLabel value="#{greeting}" style="color: #{status.index mod 2 == 0 ? 'red' : 'green'}"/>
+    </ui:repeat>
+    <h:form>
+        <h:commandButton value="Make magic" onclick="makeMagic('#{studentRegisterBean.student.name}')"/>
+    </h:form>
 </h:body>
+<script type="text/javascript">
+    function makeMagic(magic) {
+        alert(magic);
+    }
+</script>
 </html>

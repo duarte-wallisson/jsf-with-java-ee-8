@@ -31,7 +31,7 @@ public class StudentRegisterBean implements Serializable {
         return "------------- " + name + " -------------";
     }
 
-    public String goToIndex2(){
+    public String goToIndex2() {
         System.out.println("Go to index2");
         return "index2";
     }
