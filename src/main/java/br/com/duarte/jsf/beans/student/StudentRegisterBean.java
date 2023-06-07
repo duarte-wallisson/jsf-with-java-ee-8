@@ -27,4 +27,12 @@ public class StudentRegisterBean implements Serializable {
         greetingsMap.put("farewell", "Goodbye!");
     }
 
+    public String separator(String name) {
+        return "------------- " + name + " -------------";
+    }
+
+    public String goToIndex2(){
+        System.out.println("Go to index2");
+        return "index2";
+    }
 }
